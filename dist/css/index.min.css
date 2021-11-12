@@ -1,1 +1,1 @@
-body,html{margin:0;background-color:#79B4B7}*{border:solid 1px #666}
+.board{width:500px;height:500px;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-sizing:border-box;box-sizing:border-box}.board__block{width:32.9%;height:33%}body,html{margin:0;background-color:#79B4B7}*{border:solid 1px #666}

@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TIC TAC TOE</title>
-    <link rel="stylesheet" href="./dist/css/index.min.css">
+    <link rel="stylesheet" href="./dist/css/index.min.css" />
     <script src="./dist/js/index.js"></script>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <div class="board" id="board"></div>
+    <div id="winner"></div>
+    <button id="reset">Reset Game</button>
+  </body>
 </html>
+
+<template>
+  <div class="board__block"></div>
+</template>
+<template>
+  <div class="board__block">O</div>
+</template>
+<template>
+  <div class="board__block">X</div>
+</template>
