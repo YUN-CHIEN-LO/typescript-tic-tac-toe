@@ -1,0 +1,101 @@
+.board {
+  width: 50vw;
+  height: 50vw;
+  min-width: 300px;
+  min-height: 300px;
+  max-width: 400px;
+  max-height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  padding: 10px;
+  background-color: $black-color;
+  &__block {
+    box-sizing: border-box;
+    width: 33.33%;
+    height: 33.33%;
+    border: solid 5px $black-color;
+    margin: 0;
+    background-color: $bg-color;
+  }
+  &--circle {
+    position: relative;
+    &:after,
+    &:before {
+      content: "";
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+      border-radius: 100%;
+    }
+    &:before {
+      width: 80%;
+      height: 80%;
+      background-color: $main-color;
+    }
+    &:after {
+      width: 50%;
+      height: 50%;
+      background-color: $bg-color;
+    }
+  }
+  &--cross {
+    position: relative;
+    &:after,
+    &:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 80%;
+      height: 15%;
+      background-color: $second-color;
+    }
+    &:before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    &:after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+}
+
+.is-circle {
+  cursor: pointer;
+  &:hover {
+    background-color: $second-color;
+  }
+}
+.is-cross {
+  cursor: pointer;
+  &:hover {
+    background-color: $main-color;
+  }
+}
+
+#reset {
+  font-size: 24px;
+  color: $white-color;
+  background-color: $black-color;
+  padding: 10px 20px;
+  text-align: center;
+  width: 50vw;
+  min-width: 300px;
+  max-width: 400px;
+  border: none;
+  margin: 20px;
+  cursor: pointer;
+  &:hover {
+    background-color: $white-color;
+    color: $black-color;
+    font-weight: bold;
+  }
+}
+
+#winner {
+  font-size: 80px;
+  font-weight: bold;
+  color: $white-color;
+  text-align: center;
+}
