@@ -148,7 +148,7 @@ const setGame = function (state: number | null) {
     target.innerText = "It's a Draw!";
   } else {
     // 重置遊戲
-    target.innerText = "";
+    target.innerText = "TIC TAC TOE";
     myBoard = <number[]>[];
     clickCount = 0;
     for (let i = 0; i < 9; i++) {
