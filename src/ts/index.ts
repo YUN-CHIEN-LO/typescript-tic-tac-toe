@@ -108,12 +108,6 @@ const setState = function (number: string | undefined) {
   // 渲染遊戲，開啟點擊
   renderBoard(true);
 
-  // 判斷是否填滿(平手)
-  if (clickCount >= 8) {
-    setGame(State.empty);
-    return;
-  }
-
   // 判斷是否連成線
   const hasLine = checkLine();
   if (hasLine === 1) {
@@ -122,6 +116,12 @@ const setState = function (number: string | undefined) {
   }
   if (hasLine === -1) {
     setGame(State.cross);
+    return;
+  }
+  
+  // 判斷是否填滿(平手)
+  if (clickCount >= 8) {
+    setGame(State.empty);
     return;
   }
 };
