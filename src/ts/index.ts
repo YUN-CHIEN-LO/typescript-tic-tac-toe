@@ -10,7 +10,7 @@ const lines = [
   [0, 1, 2],
   [3, 4, 5],
   [6, 7, 8],
-  [1, 3, 6],
+  [0, 3, 6],
   [1, 4, 7],
   [2, 5, 8],
   [0, 4, 8],
@@ -57,8 +57,17 @@ const renderBoard = function (clickable: boolean) {
         throw new Error("[INVALID STATE]");
         break;
     }
+
+    const targetDOM = target.querySelector("div") as HTMLElement;
     // 賦予 data-number
-    target.querySelector("div").dataset.number = id;
+    targetDOM.dataset.number = id.toString();
+    // 掛hover樣式
+    if (checkEmpty()) {
+      targetDOM.classList.add("is-cross");
+    } else if (myBoard[id] === State.empty && clickable) {
+      const className = isCirlce ? "is-circle" : "is-cross";
+      targetDOM.classList.add(className);
+    }
     // 插入DOM元件
     boardDOM?.appendChild(target);
   });
@@ -170,6 +179,19 @@ const checkLine = function (): number {
   }
   // 沒有線
   return 0;
+};
+
+/**
+ * 檢查遊戲是否為空
+ *
+ * @returns {boolean} 遊戲是否為空
+ */
+const checkEmpty = function (): boolean {
+  let isEmpty = true;
+  myBoard.forEach((x) => {
+    if (x !== State.empty) isEmpty = false;
+  });
+  return isEmpty;
 };
 
 /**

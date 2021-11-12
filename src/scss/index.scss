@@ -1,10 +1,15 @@
 @import "./var";
 @import "./board";
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
 body,
 html {
   margin: 0;
+  font-family: "Josefin Sans", sans-serif;
   background-color: $bg-color;
-}
-* {
-  border: solid 1px #666;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
